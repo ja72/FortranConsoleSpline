@@ -50,5 +50,5 @@
 		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
 		<File RelativePath=".\FortranConsoleSpline.f90"/>
 		<File RelativePath=".\mod_splines.f90"/></Filter>
-		<File RelativePath=".\ReadMe.txt"/></Files>
+		<File RelativePath=".\README.MD"/></Files>
 	<Globals/></VisualStudioProject>
