@@ -4,7 +4,7 @@
     implicit none
 
     ! Variables
-    real(wp), allocatable :: xi(:), yi(:), h, x, y, yp
+    real(wp), allocatable :: xi(:), yi(:), h, x, y, yp, x0
     type(spline) :: sp
     integer :: i, n
     ! compile with /fpconstant
@@ -15,11 +15,12 @@
     
     n = 11
     h = (xi(size(xi))-xi(1))/(n-1)
+    x0 = xi(1)
     sp = spline(xi, yi)
     print *, ""
     print '(1x,a6,1x,a18,1x,a18,1x,a18)', "Index", "x", "y", "yp"
     do i=0,n-1
-        x = xi(1) + i*h
+        x = x0 + i*h
         y = sp%value(x)
         yp = sp%slope(x)
         print '(1x,i6,1x,g18.11,1x,g18.6,1x,g18.6)', i, x, y, yp
@@ -35,6 +36,9 @@
     print '(1x,a6,1x,a18,1x,a18,1x,a18)', "Index", "x", "y", "yp"
     print '(1x,i6,1x,g18.11,1x,g18.6,1x,g18.6)', i, x, y, yp
     
-
+    xi= [(x0+i*h, i=0, n-1)]
+    yi = sp%value(xi)
+    print *, yi
+    
     end program FortranConsoleSpline
 
