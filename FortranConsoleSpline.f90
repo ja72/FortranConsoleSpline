@@ -12,7 +12,7 @@
     yi = [18.0,18.4921875,18.9375,19.2890625,19.5,19.5234375,19.3125,18.8203125,18.0]
 
     print *, 'Cubic Spline Interpolation Demo'
-    
+    print *, 'n=', size(yi)
     n = 11
     h = (xi(size(xi))-xi(1))/(n-1)
     x0 = xi(1)
@@ -36,9 +36,6 @@
     print '(1x,a6,1x,a18,1x,a18,1x,a18)', "Index", "x", "y", "yp"
     print '(1x,i6,1x,g18.11,1x,g18.6,1x,g18.6)', i, x, y, yp
     
-    xi= [(x0+i*h, i=0, n-1)]
-    yi = sp%value(xi)
-    print *, yi
     
     end program FortranConsoleSpline
 
