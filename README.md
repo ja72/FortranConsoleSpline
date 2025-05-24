@@ -49,7 +49,7 @@ yi = sp%value(xi)
 
 where `xi` and `yi` are arrays
 
-Additionaly, you can interpolate the slope and the second derivative using the
+Additionally, you can interpolate the slope and the second derivative using the
 `slope(x)` and `slope2(x)` functions. For example
 
 ```fortran
@@ -59,7 +59,7 @@ ypp = sp%slope2(x)
 ```
 
 As a note, if the evaluation point `x` is outside the defined range for the
-spline, then a linear iterpolation is done from the ends of the spline.
+spline, then a linear interpolation is done from the ends of the spline.
 
 Finally, if a local extrema point is needed (local minimum or maximum) a bisection
 method is used to find the `x` value where the slope is zero using
@@ -70,17 +70,17 @@ x_max = sp%extrema()
 y_max = sp%value(x_max)
 ```
 
-The high and low limits of the extrema function are optional and the
+The high and low limits of the extrema function are optional, and the
 start and end of the spline are used by default.
 
 ## Example
 
-The included example program below defines an spline using 9 points
+The included example program below defines a spline using 9 points
 between 0 and 2 with an interval of 0.25.
 
-The interplation output has an interval of 0.20.
+The interpolation output has an interval of 0.20.
 
-In the end the local maximum is found.
+In the end, the local maximum is found.
 
 ### Program
 
